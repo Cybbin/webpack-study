@@ -1,0 +1,596 @@
+@font-face {
+  font-family: "one";
+  src: url('./font/one.eot');
+  src: url('./font/one.eot?#iefix') format('eot'),
+  url('./font/one.woff2') format('woff2'),
+  url('./font/one.woff') format('woff'),
+  url('./font/one.ttf') format('truetype'),
+  url('./font/one.svg#one') format('svg');
+}
+
+@mixin ico-styles {
+  font-family: "one";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%ico {
+  @include ico-styles;
+}
+
+@function ico-char($filename) {
+  $char: "";
+
+  @if $filename == address {
+    $char: '"#{\E001}"';
+  }
+  @if $filename == arrow-down-light {
+    $char: '"#{\E002}"';
+  }
+  @if $filename == arrow-down {
+    $char: '"#{\E003}"';
+  }
+  @if $filename == arrow-left-light {
+    $char: '"#{\E004}"';
+  }
+  @if $filename == arrow-right-normal {
+    $char: '"#{\E005}"';
+  }
+  @if $filename == arrow-right {
+    $char: '"#{\E006}"';
+  }
+  @if $filename == audio {
+    $char: '"#{\E007}"';
+  }
+  @if $filename == bag {
+    $char: '"#{\E008}"';
+  }
+  @if $filename == bag_v2 {
+    $char: '"#{\E009}"';
+  }
+  @if $filename == bookmark {
+    $char: '"#{\E00A}"';
+  }
+  @if $filename == brand-2020 {
+    $char: '"#{\E00B}"';
+  }
+  @if $filename == brand {
+    $char: '"#{\E00C}"';
+  }
+  @if $filename == bundles {
+    $char: '"#{\E00D}"';
+  }
+  @if $filename == calendar {
+    $char: '"#{\E00E}"';
+  }
+  @if $filename == call {
+    $char: '"#{\E00F}"';
+  }
+  @if $filename == call_v2 {
+    $char: '"#{\E010}"';
+  }
+  @if $filename == cart-empty {
+    $char: '"#{\E011}"';
+  }
+  @if $filename == cart-exchange {
+    $char: '"#{\E012}"';
+  }
+  @if $filename == cart-gift {
+    $char: '"#{\E013}"';
+  }
+  @if $filename == cart-reason {
+    $char: '"#{\E014}"';
+  }
+  @if $filename == cart-security {
+    $char: '"#{\E015}"';
+  }
+  @if $filename == cases-protection {
+    $char: '"#{\E016}"';
+  }
+  @if $filename == cat-phone {
+    $char: '"#{\E017}"';
+  }
+  @if $filename == cellphone {
+    $char: '"#{\E018}"';
+  }
+  @if $filename == contact {
+    $char: '"#{\E019}"';
+  }
+  @if $filename == dash {
+    $char: '"#{\E01A}"';
+  }
+  @if $filename == earphones {
+    $char: '"#{\E01B}"';
+  }
+  @if $filename == email {
+    $char: '"#{\E01C}"';
+  }
+  @if $filename == face-smile {
+    $char: '"#{\E01D}"';
+  }
+  @if $filename == face-upset {
+    $char: '"#{\E01E}"';
+  }
+  @if $filename == facebook-stroke {
+    $char: '"#{\E01F}"';
+  }
+  @if $filename == facebook {
+    $char: '"#{\E020}"';
+  }
+  @if $filename == filter {
+    $char: '"#{\E021}"';
+  }
+  @if $filename == free-delivery {
+    $char: '"#{\E022}"';
+  }
+  @if $filename == full-bag {
+    $char: '"#{\E023}"';
+  }
+  @if $filename == gear {
+    $char: '"#{\E024}"';
+  }
+  @if $filename == google-plus {
+    $char: '"#{\E025}"';
+  }
+  @if $filename == half-bag {
+    $char: '"#{\E026}"';
+  }
+  @if $filename == head-7pro-5g {
+    $char: '"#{\E027}"';
+  }
+  @if $filename == head-7pro {
+    $char: '"#{\E028}"';
+  }
+  @if $filename == head-7t-5g {
+    $char: '"#{\E029}"';
+  }
+  @if $filename == head-7t {
+    $char: '"#{\E02A}"';
+  }
+  @if $filename == head-audio {
+    $char: '"#{\E02B}"';
+  }
+  @if $filename == head-bundles {
+    $char: '"#{\E02C}"';
+  }
+  @if $filename == head-cases-protection {
+    $char: '"#{\E02D}"';
+  }
+  @if $filename == head-gear {
+    $char: '"#{\E02E}"';
+  }
+  @if $filename == head-oneplus-7 {
+    $char: '"#{\E02F}"';
+  }
+  @if $filename == head-oneplus-7pro-5g {
+    $char: '"#{\E030}"';
+  }
+  @if $filename == head-oneplus-7pro {
+    $char: '"#{\E031}"';
+  }
+  @if $filename == head-oneplus-tv-acc {
+    $char: '"#{\E032}"';
+  }
+  @if $filename == head-oneplus-tv {
+    $char: '"#{\E033}"';
+  }
+  @if $filename == head-oneplus7-2 {
+    $char: '"#{\E034}"';
+  }
+  @if $filename == head-oneplus7pro-2 {
+    $char: '"#{\E035}"';
+  }
+  @if $filename == head-oneplus7pro-5g {
+    $char: '"#{\E036}"';
+  }
+  @if $filename == head-phone {
+    $char: '"#{\E037}"';
+  }
+  @if $filename == head-power-cables {
+    $char: '"#{\E038}"';
+  }
+  @if $filename == head-store-insurance {
+    $char: '"#{\E039}"';
+  }
+  @if $filename == help_v2 {
+    $char: '"#{\E03A}"';
+  }
+  @if $filename == instagram {
+    $char: '"#{\E03B}"';
+  }
+  @if $filename == less {
+    $char: '"#{\E03C}"';
+  }
+  @if $filename == link {
+    $char: '"#{\E03D}"';
+  }
+  @if $filename == live-chat {
+    $char: '"#{\E03E}"';
+  }
+  @if $filename == load3d {
+    $char: '"#{\E03F}"';
+  }
+  @if $filename == location {
+    $char: '"#{\E040}"';
+  }
+  @if $filename == location_v2 {
+    $char: '"#{\E041}"';
+  }
+  @if $filename == more {
+    $char: '"#{\E042}"';
+  }
+  @if $filename == new {
+    $char: '"#{\E043}"';
+  }
+  @if $filename == phone {
+    $char: '"#{\E044}"';
+  }
+  @if $filename == power-banks {
+    $char: '"#{\E045}"';
+  }
+  @if $filename == power-cables {
+    $char: '"#{\E046}"';
+  }
+  @if $filename == qq {
+    $char: '"#{\E047}"';
+  }
+  @if $filename == qqzone {
+    $char: '"#{\E048}"';
+  }
+  @if $filename == refresh {
+    $char: '"#{\E049}"';
+  }
+  @if $filename == return-policy {
+    $char: '"#{\E04A}"';
+  }
+  @if $filename == search {
+    $char: '"#{\E04B}"';
+  }
+  @if $filename == search_v2 {
+    $char: '"#{\E04C}"';
+  }
+  @if $filename == secure-payments {
+    $char: '"#{\E04D}"';
+  }
+  @if $filename == serviceIcons-15 {
+    $char: '"#{\E04E}"';
+  }
+  @if $filename == serviceIcons-30 {
+    $char: '"#{\E04F}"';
+  }
+  @if $filename == serviceIcons-7 {
+    $char: '"#{\E050}"';
+  }
+  @if $filename == serviceIcons-gift {
+    $char: '"#{\E051}"';
+  }
+  @if $filename == serviceIcons-safe {
+    $char: '"#{\E052}"';
+  }
+  @if $filename == snapchat-ghost {
+    $char: '"#{\E053}"';
+  }
+  @if $filename == store-insurance {
+    $char: '"#{\E054}"';
+  }
+  @if $filename == success {
+    $char: '"#{\E055}"';
+  }
+  @if $filename == twitter {
+    $char: '"#{\E056}"';
+  }
+  @if $filename == user {
+    $char: '"#{\E057}"';
+  }
+  @if $filename == user_v2 {
+    $char: '"#{\E058}"';
+  }
+  @if $filename == wechat {
+    $char: '"#{\E059}"';
+  }
+  @if $filename == wechat_v2 {
+    $char: '"#{\E05A}"';
+  }
+  @if $filename == weibo {
+    $char: '"#{\E05B}"';
+  }
+  @if $filename == weibo_v2 {
+    $char: '"#{\E05C}"';
+  }
+
+  @return $char;
+}
+
+@mixin ico($filename, $insert: before, $extend: false) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %ico;
+    } @else {
+      @include ico-styles;
+    }
+    content: unquote(ico-char($filename));
+  }
+}
+
+.ico-address {
+  @include ico(address);
+}
+.ico-arrow-down-light {
+  @include ico(arrow-down-light);
+}
+.ico-arrow-down {
+  @include ico(arrow-down);
+}
+.ico-arrow-left-light {
+  @include ico(arrow-left-light);
+}
+.ico-arrow-right-normal {
+  @include ico(arrow-right-normal);
+}
+.ico-arrow-right {
+  @include ico(arrow-right);
+}
+.ico-audio {
+  @include ico(audio);
+}
+.ico-bag {
+  @include ico(bag);
+}
+.ico-bag_v2 {
+  @include ico(bag_v2);
+}
+.ico-bookmark {
+  @include ico(bookmark);
+}
+.ico-brand-2020 {
+  @include ico(brand-2020);
+}
+.ico-brand {
+  @include ico(brand);
+}
+.ico-bundles {
+  @include ico(bundles);
+}
+.ico-calendar {
+  @include ico(calendar);
+}
+.ico-call {
+  @include ico(call);
+}
+.ico-call_v2 {
+  @include ico(call_v2);
+}
+.ico-cart-empty {
+  @include ico(cart-empty);
+}
+.ico-cart-exchange {
+  @include ico(cart-exchange);
+}
+.ico-cart-gift {
+  @include ico(cart-gift);
+}
+.ico-cart-reason {
+  @include ico(cart-reason);
+}
+.ico-cart-security {
+  @include ico(cart-security);
+}
+.ico-cases-protection {
+  @include ico(cases-protection);
+}
+.ico-cat-phone {
+  @include ico(cat-phone);
+}
+.ico-cellphone {
+  @include ico(cellphone);
+}
+.ico-contact {
+  @include ico(contact);
+}
+.ico-dash {
+  @include ico(dash);
+}
+.ico-earphones {
+  @include ico(earphones);
+}
+.ico-email {
+  @include ico(email);
+}
+.ico-face-smile {
+  @include ico(face-smile);
+}
+.ico-face-upset {
+  @include ico(face-upset);
+}
+.ico-facebook-stroke {
+  @include ico(facebook-stroke);
+}
+.ico-facebook {
+  @include ico(facebook);
+}
+.ico-filter {
+  @include ico(filter);
+}
+.ico-free-delivery {
+  @include ico(free-delivery);
+}
+.ico-full-bag {
+  @include ico(full-bag);
+}
+.ico-gear {
+  @include ico(gear);
+}
+.ico-google-plus {
+  @include ico(google-plus);
+}
+.ico-half-bag {
+  @include ico(half-bag);
+}
+.ico-head-7pro-5g {
+  @include ico(head-7pro-5g);
+}
+.ico-head-7pro {
+  @include ico(head-7pro);
+}
+.ico-head-7t-5g {
+  @include ico(head-7t-5g);
+}
+.ico-head-7t {
+  @include ico(head-7t);
+}
+.ico-head-audio {
+  @include ico(head-audio);
+}
+.ico-head-bundles {
+  @include ico(head-bundles);
+}
+.ico-head-cases-protection {
+  @include ico(head-cases-protection);
+}
+.ico-head-gear {
+  @include ico(head-gear);
+}
+.ico-head-oneplus-7 {
+  @include ico(head-oneplus-7);
+}
+.ico-head-oneplus-7pro-5g {
+  @include ico(head-oneplus-7pro-5g);
+}
+.ico-head-oneplus-7pro {
+  @include ico(head-oneplus-7pro);
+}
+.ico-head-oneplus-tv-acc {
+  @include ico(head-oneplus-tv-acc);
+}
+.ico-head-oneplus-tv {
+  @include ico(head-oneplus-tv);
+}
+.ico-head-oneplus7-2 {
+  @include ico(head-oneplus7-2);
+}
+.ico-head-oneplus7pro-2 {
+  @include ico(head-oneplus7pro-2);
+}
+.ico-head-oneplus7pro-5g {
+  @include ico(head-oneplus7pro-5g);
+}
+.ico-head-phone {
+  @include ico(head-phone);
+}
+.ico-head-power-cables {
+  @include ico(head-power-cables);
+}
+.ico-head-store-insurance {
+  @include ico(head-store-insurance);
+}
+.ico-help_v2 {
+  @include ico(help_v2);
+}
+.ico-instagram {
+  @include ico(instagram);
+}
+.ico-less {
+  @include ico(less);
+}
+.ico-link {
+  @include ico(link);
+}
+.ico-live-chat {
+  @include ico(live-chat);
+}
+.ico-load3d {
+  @include ico(load3d);
+}
+.ico-location {
+  @include ico(location);
+}
+.ico-location_v2 {
+  @include ico(location_v2);
+}
+.ico-more {
+  @include ico(more);
+}
+.ico-new {
+  @include ico(new);
+}
+.ico-phone {
+  @include ico(phone);
+}
+.ico-power-banks {
+  @include ico(power-banks);
+}
+.ico-power-cables {
+  @include ico(power-cables);
+}
+.ico-qq {
+  @include ico(qq);
+}
+.ico-qqzone {
+  @include ico(qqzone);
+}
+.ico-refresh {
+  @include ico(refresh);
+}
+.ico-return-policy {
+  @include ico(return-policy);
+}
+.ico-search {
+  @include ico(search);
+}
+.ico-search_v2 {
+  @include ico(search_v2);
+}
+.ico-secure-payments {
+  @include ico(secure-payments);
+}
+.ico-serviceIcons-15 {
+  @include ico(serviceIcons-15);
+}
+.ico-serviceIcons-30 {
+  @include ico(serviceIcons-30);
+}
+.ico-serviceIcons-7 {
+  @include ico(serviceIcons-7);
+}
+.ico-serviceIcons-gift {
+  @include ico(serviceIcons-gift);
+}
+.ico-serviceIcons-safe {
+  @include ico(serviceIcons-safe);
+}
+.ico-snapchat-ghost {
+  @include ico(snapchat-ghost);
+}
+.ico-store-insurance {
+  @include ico(store-insurance);
+}
+.ico-success {
+  @include ico(success);
+}
+.ico-twitter {
+  @include ico(twitter);
+}
+.ico-user {
+  @include ico(user);
+}
+.ico-user_v2 {
+  @include ico(user_v2);
+}
+.ico-wechat {
+  @include ico(wechat);
+}
+.ico-wechat_v2 {
+  @include ico(wechat_v2);
+}
+.ico-weibo {
+  @include ico(weibo);
+}
+.ico-weibo_v2 {
+  @include ico(weibo_v2);
+}
