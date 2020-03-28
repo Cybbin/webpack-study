@@ -21,9 +21,9 @@
 
 <style lang="scss">
   @import './search-box.scss';
-  @import './font/one.scss';
 
   .search-box {
+    display: flex;
     font-size: 100px;
   }
 </style>
