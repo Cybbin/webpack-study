@@ -14,6 +14,9 @@
       return {
         kv
       }
+    },
+    mounted () {
+      console.log(123)
     }
   }
 </script>
