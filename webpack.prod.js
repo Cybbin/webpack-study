@@ -7,6 +7,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const TerserPlugin = require('terser-webpack-plugin')
 
 const smp = new SpeedMeasurePlugin()
 
@@ -19,8 +20,8 @@ const prodConfig = {
     }),
     new CopyWebpackPlugin([{
       from: { glob: 'assets/**/*.*' }
-    }]),
-    new BundleAnalyzerPlugin()
+    }])
+    // new BundleAnalyzerPlugin()
   ],
   optimization: {
     splitChunks: {
@@ -32,8 +33,15 @@ const prodConfig = {
           minChunks: 2
         }
       }
-    }
+    },
+    minimizer: [
+      new TerserPlugin({
+        parallel: true
+      })
+    ]
   }
 }
 
-module.exports = smp.wrap(merge(baseConfig, prodConfig))
+// module.exports = smp.wrap(merge(baseConfig, prodConfig))
+
+module.exports = merge(baseConfig, prodConfig)

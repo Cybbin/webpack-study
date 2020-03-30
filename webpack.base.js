@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const Happypack = require('happypack')
 
 const setMPA = () => {
   const entry = {}
@@ -60,7 +61,16 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      use: 'babel-loader'
+      use: [
+        {
+          loader: 'thread-loader',
+          options: {
+            workers: 3
+          }
+        },
+        // 'happypack/loader'
+        'babel-loader'
+      ]
     },
     {
       test: /\.vue$/,
@@ -126,6 +136,9 @@ module.exports = {
         }
       })
     }
+    // new Happypack({
+    //   loaders: ['babel-loader']
+    // })
   ].concat(htmlWebpackPlugins),
   stats: 'errors-only'
 }
