@@ -4,6 +4,7 @@ const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base')
 
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const prodConfig = {
   mode: 'production',
@@ -11,7 +12,10 @@ const prodConfig = {
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g,
       cssProcessor: require('cssnano')
-    })
+    }),
+    new CopyWebpackPlugin([{
+      from: { glob:'assets/**/*.*' }
+    }])
   ],
   optimization: {
     splitChunks: {
