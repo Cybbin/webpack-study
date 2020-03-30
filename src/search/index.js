@@ -1,17 +1,17 @@
 import Vue from 'vue'
 import searchBox from './search-box.vue'
-import largeNumber from 'webpack_study_chen'
+// import largeNumber from 'webpack_study_chen'
 // import { a } from './tree-shaking'
 
 import common from '../../common'
 
 console.log(common)
-console.log(largeNumber)
+// console.log(largeNumber)
 
 new Vue({
   data: {
-    text: '',
-    number: largeNumber('99999', '1')
+    text: '123'
+    // number: largeNumber('99999', '1')
   },
   components: {
     searchBox
