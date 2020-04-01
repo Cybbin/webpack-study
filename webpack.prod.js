@@ -3,11 +3,13 @@
 const merge = require('webpack-merge')
 const baseConfig = require('./webpack.base')
 
+const webpack = require('webpack')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const TerserPlugin = require('terser-webpack-plugin')
+const HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 const smp = new SpeedMeasurePlugin()
 
@@ -20,8 +22,12 @@ const prodConfig = {
     }),
     new CopyWebpackPlugin([{
       from: { glob: 'assets/**/*.*' }
-    }])
+    }]),
     // new BundleAnalyzerPlugin()
+    new webpack.DllReferencePlugin({
+      manifest: require('./build/library/library.json')
+    }),
+    new HardSourceWebpackPlugin()
   ],
   optimization: {
     splitChunks: {
@@ -36,7 +42,8 @@ const prodConfig = {
     },
     minimizer: [
       new TerserPlugin({
-        parallel: true
+        parallel: true,
+        cache: true
       })
     ]
   }

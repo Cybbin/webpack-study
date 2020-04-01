@@ -56,20 +56,25 @@ module.exports = {
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.common.js'
-    }
+    },
+    modules: [path.resolve(__dirname, 'node_modules')],
+    extensions: ['.js'],
+    mainFields: ['main']
   },
   module: {
     rules: [{
       test: /\.js$/,
+      include: path.resolve('src'),
+      exclude: path.resolve('node_modules'),
       use: [
-        {
-          loader: 'thread-loader',
-          options: {
-            workers: 3
-          }
-        },
-        // 'happypack/loader'
-        'babel-loader'
+        // {
+        //   loader: 'thread-loader',
+        //   options: {
+        //     workers: 3
+        //   }
+        // },
+        'happypack/loader'
+        // 'babel-loader'
       ]
     },
     {
@@ -135,10 +140,10 @@ module.exports = {
           process.exit(1)
         }
       })
-    }
-    // new Happypack({
-    //   loaders: ['babel-loader']
-    // })
-  ].concat(htmlWebpackPlugins),
-  stats: 'errors-only'
+    },
+    new Happypack({
+      loaders: ['babel-loader?cacheDirectory=true']
+    })
+  ].concat(htmlWebpackPlugins)
+  // stats: 'errors-only'
 }
